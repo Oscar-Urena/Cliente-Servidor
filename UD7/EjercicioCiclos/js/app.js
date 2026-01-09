@@ -4,7 +4,11 @@ import { DragDrop } from "./dragDrop.js";
 
 const EjercicioCiclos = (() => {
 
+<<<<<<< HEAD
     let elemento, subElemento1, subElemento2, formCursos, formModulos, btnEnviar, sc1, sc2, calificaciones, campoCalificaciones, btnSubir;
+=======
+    let elemento, subElemento, formCursos, formModulos, btnEnviar, sc1, sc2, calificaciones, campoCalificaciones;
+>>>>>>> 45c54d1 (Pre volcado)
     const init = () => {
         document.addEventListener("DOMContentLoaded", () => {
             establecerObjetos();
@@ -24,8 +28,12 @@ const EjercicioCiclos = (() => {
 
         calificaciones = document.querySelector(".col-lg-3 .card tbody");
         campoCalificaciones = document.querySelector(".myTable tbody");
+<<<<<<< HEAD
 
         btnSubir = document.querySelector("#grabar");
+=======
+        console.log(campoCalificaciones);
+>>>>>>> 45c54d1 (Pre volcado)
     }
 
     const establecerEventos = () => {
@@ -39,8 +47,15 @@ const EjercicioCiclos = (() => {
                 DragDrop.endDrag(e);
             });
         });
+<<<<<<< HEAD
 
         btnSubir.addEventListener("click", subirCalificaciones);
+=======
+        campoCalificaciones.addEventListener("dragover", DragDrop.overDrag);
+        campoCalificaciones.addEventListener("dragleave", DragDrop.leaveDrag);
+        campoCalificaciones.addEventListener("dragenter", DragDrop.enterDrag);
+        campoCalificaciones.addEventListener("drop", DragDrop.drop);
+>>>>>>> 45c54d1 (Pre volcado)
 
     }
     const cargarCursos = async () => {
@@ -58,7 +73,11 @@ const EjercicioCiclos = (() => {
             });
 
         } catch (error) {
+<<<<<<< HEAD
 
+=======
+            console.log(error.message);
+>>>>>>> 45c54d1 (Pre volcado)
         }
     }
 
@@ -94,6 +113,7 @@ const EjercicioCiclos = (() => {
             console.log(data.data);
             data.data.forEach(element => {
                 elemento = document.createElement("tr");
+<<<<<<< HEAD
                 subElemento1 = document.createElement("td");
                 elemento.append(subElemento1);
                 subElemento1.textContent = element.apellidosNombre;
@@ -107,6 +127,13 @@ const EjercicioCiclos = (() => {
                 subElemento2.addEventListener("dragenter", DragDrop.enterDrag);
                 subElemento2.addEventListener("drop", DragDrop.drop);
                 campoCalificaciones.append(elemento);
+=======
+                subElemento = document.createElement("td");
+                elemento.append(subElemento);
+                
+                
+                formCursos.append(elemento);
+>>>>>>> 45c54d1 (Pre volcado)
             });
 
         } catch (error) {
@@ -114,6 +141,7 @@ const EjercicioCiclos = (() => {
         }
     }
 
+<<<<<<< HEAD
     const subirCalificaciones = async () => {
         console.log(formModulos.value);
         const notas = document.querySelectorAll(".calificaciones-alumno");
@@ -145,6 +173,8 @@ const EjercicioCiclos = (() => {
 
     }
 
+=======
+>>>>>>> 45c54d1 (Pre volcado)
     const borrarModulos = () => {
         [...formModulos.querySelectorAll("option:not(:first-child)")].forEach(elemento => elemento.remove());
     }
