@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla con Tabulator</title>
+    <link href="../../../librerias/tabulator/tabulator.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Tabla Avanzada con Tabulator.js</h1>
+        
+        <div class="toolbar">
+            <div class="search-box">
+                <input type="text" id="filtrar" placeholder="Buscar en toda la tabla...">
+            </div>
+            
+            <button class="export" id="downloadXlsx">
+                <span>📥</span> Excel
+            </button>
+            <button class="csv" id="downloadCsv">
+                <span>📄</span> CSV
+            </button>
+            <button class="clear" id="clearFilters">
+                <span>🗑️</span> Limpiar Filtros
+            </button>
+        </div>
+
+        <div id="data-table"></div>
+
+       
+    </div>
+
+    <!-- Librerías necesarias -->
+    <!-- Tabulator: Librería para manejo de tablas interactivas -->
+    <script src="../../../librerias/tabulator/tabulator.min.js"></script>
+    <!-- SheetJS: Librería para exportar a Excel -->
+    <script src="../../../librerias/xls/xlsx.full.min.js"></script>
+    <!-- script usuario -->
+    <script type="module" src="./js/app.js"></script>
+    
+    <!-- script usuario  para que no cargue miles de registros en memoria-->
+    <!-- <script type="module" src="./jsRemote/app.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,65 @@
+-- Crear base de datos
+CREATE DATABASE IF NOT EXISTS `usuarios` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `usuarios`;
+
+-- Crear tabla (si no existe)
+CREATE TABLE IF NOT EXISTS `users` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(150) NOT NULL UNIQUE,
+    `role` ENUM('Admin','Usuario','Editor','Visor') NOT NULL,
+    `active` TINYINT(1) NOT NULL DEFAULT 1
+);
+
+-- Insertar 50 registros
+INSERT INTO `users` (`name`, `email`, `role`, `active`) VALUES
+('Usuario_1','usuario1@example.com','Usuario',0),
+('Usuario_2','usuario2@example.com','Editor',1),
+('Usuario_3','usuario3@example.com','Visor',0),
+('Usuario_4','usuario4@example.com','Admin',1),
+('Usuario_5','usuario5@example.com','Usuario',0),
+('Usuario_6','usuario6@example.com','Editor',1),
+('Usuario_7','usuario7@example.com','Visor',0),
+('Usuario_8','usuario8@example.com','Admin',1),
+('Usuario_9','usuario9@example.com','Usuario',0),
+('Usuario_10','usuario10@example.com','Editor',1),
+('Usuario_11','usuario11@example.com','Visor',0),
+('Usuario_12','usuario12@example.com','Admin',1),
+('Usuario_13','usuario13@example.com','Usuario',0),
+('Usuario_14','usuario14@example.com','Editor',1),
+('Usuario_15','usuario15@example.com','Visor',0),
+('Usuario_16','usuario16@example.com','Admin',1),
+('Usuario_17','usuario17@example.com','Usuario',0),
+('Usuario_18','usuario18@example.com','Editor',1),
+('Usuario_19','usuario19@example.com','Visor',0),
+('Usuario_20','usuario20@example.com','Admin',1),
+('Usuario_21','usuario21@example.com','Usuario',0),
+('Usuario_22','usuario22@example.com','Editor',1),
+('Usuario_23','usuario23@example.com','Visor',0),
+('Usuario_24','usuario24@example.com','Admin',1),
+('Usuario_25','usuario25@example.com','Usuario',0),
+('Usuario_26','usuario26@example.com','Editor',1),
+('Usuario_27','usuario27@example.com','Visor',0),
+('Usuario_28','usuario28@example.com','Admin',1),
+('Usuario_29','usuario29@example.com','Usuario',0),
+('Usuario_30','usuario30@example.com','Editor',1),
+('Usuario_31','usuario31@example.com','Visor',0),
+('Usuario_32','usuario32@example.com','Admin',1),
+('Usuario_33','usuario33@example.com','Usuario',0),
+('Usuario_34','usuario34@example.com','Editor',1),
+('Usuario_35','usuario35@example.com','Visor',0),
+('Usuario_36','usuario36@example.com','Admin',1),
+('Usuario_37','usuario37@example.com','Usuario',0),
+('Usuario_38','usuario38@example.com','Editor',1),
+('Usuario_39','usuario39@example.com','Visor',0),
+('Usuario_40','usuario40@example.com','Admin',1),
+('Usuario_41','usuario41@example.com','Usuario',0),
+('Usuario_42','usuario42@example.com','Editor',1),
+('Usuario_43','usuario43@example.com','Visor',0),
+('Usuario_44','usuario44@example.com','Admin',1),
+('Usuario_45','usuario45@example.com','Usuario',0),
+('Usuario_46','usuario46@example.com','Editor',1),
+('Usuario_47','usuario47@example.com','Visor',0),
+('Usuario_48','usuario48@example.com','Admin',1),
+('Usuario_49','usuario49@example.com','Usuario',0),
+('Usuario_50','usuario50@example.com','Editor',1);

@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.toolbar {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+button.export {
+    background: #10b981;
+}
+
+button.export:hover {
+    background: #059669;
+}
+
+button.csv {
+    background: #f59e0b;
+}
+
+button.csv:hover {
+    background: #d97706;
+}
+
+button.clear {
+    background: #ef4444;
+}
+
+button.clear:hover {
+    background: #dc2626;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+#data-table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Personalización de Tabulator */
+/* Personalización de Tabulator */
+.tabulator {
+    font-size: 14px;
+    border: none;
+}
+
+.tabulator-header {
+    background: #667eea;
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+
+.tabulator-header .tabulator-col {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    background: #667eea;
+}
+
+.tabulator-header .tabulator-col-title {
+    color: white;
+}
+
+.tabulator-header .tabulator-arrow {
+    border-bottom-color: white;
+}
+
+.tabulator-row {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tabulator-row:hover {
+    background: #f3f4f6 !important;
+}
+
+.tabulator-row.tabulator-row-even {
+    background: #fafafa;
+}
+
+/* ESTILOS PARA FILAS SELECCIONADAS - AÑADIR ESTO */
+.tabulator-row.tabulator-selected {
+    background-color:  #e9d5ff !important;
+}
+
+.tabulator-row.tabulator-selected:hover {
+    background-color: #d8b4fe  !important;
+    cursor: pointer;
+}
+
+
+.tabulator-footer {
+    background: #f9fafb;
+    border-top: 2px solid #e5e7eb;
+    padding: 12px;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-active {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.role-badge {
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.role-admin {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.role-usuario {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+.role-editor {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.role-visor {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.info-panel {
+    margin-top: 20px;
+    padding: 16px;
+    background: #f0f9ff;
+    border-left: 4px solid #667eea;
+    border-radius: 6px;
+}
+
+.info-panel h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.info-panel ul {
+    list-style: none;
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.info-panel li:before {
+    content: "✓ ";
+    color: #10b981;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .toolbar {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        justify-content: center;
+    }
+}
