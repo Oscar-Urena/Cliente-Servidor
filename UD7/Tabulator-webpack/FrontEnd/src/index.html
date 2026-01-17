@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla con Tabulator</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Tabla Avanzada con Tabulator.js</h1>
+        
+        <div class="toolbar">
+            <div class="search-box">
+                <input type="text" id="filtrar" placeholder="Buscar en toda la tabla...">
+            </div>
+            
+            <button class="export" id="downloadXlsx">
+                <span>📥</span> Excel
+            </button>
+            <button class="csv" id="downloadCsv">
+                <span>📄</span> CSV
+            </button>
+            <button class="clear" id="clearFilters">
+                <span>🗑️</span> Limpiar Filtros
+            </button>
+        </div>
+
+        <div id="data-table"></div>
+
+       
+    </div>
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>
