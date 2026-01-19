@@ -1,12 +1,11 @@
 "use strict";
 
-import Validator from "./JustValidator.js";
-
 const InmobiliariaAPI = (() => {
 
     let selectorZona, elemento, subElemento1, bInmuebles, bGrabar, precioMin, precioMax, tabla;
     const init = () => {
         document.addEventListener("DOMContentLoaded", () => {
+            Validator();
             establecerObjetos();
             cargarZonas();
             establecerEventos();
@@ -22,7 +21,7 @@ const InmobiliariaAPI = (() => {
     }
 
     const establecerEventos = () => {
-        bInmuebles.addEventListener("click", buscarInmuebles);
+        // bInmuebles.addEventListener("click", buscarInmuebles);
         bGrabar.addEventListener("click", grabarAlquileres);
     }
 
@@ -134,19 +133,56 @@ const InmobiliariaAPI = (() => {
 
     const Validator = () => {
         const validar = new JustValidate("#buscarForm", {
-            errorFieldCssClass: 'is-invalid', //es la clase que se añade al campo que tiene error
-            errorLabelCssClass: 'invalid-feedback', //Es la clase que se asigna al mensaje de error que aparece debajo del input
-            focusInvalidField: true, //si un campo no pasa la validación, esta opción hace que el cursor se coloque en el primer campo inválido
-            validateBeforeSubmitting: true //hace que la validación ocurra antes de enviar el formulario
+            errorFieldCssClass: 'is-invalid',
+            errorLabelCssClass: 'invalid-feedback',
+            focusInvalidField: true,
+            validateBeforeSubmitting: true
         });
 
         validar
             .addField('#dni', [
-                {rule: 'required'},
-                {rule: 'minLength', value: 9},
-                {rule: 'maxLength', value: 9},
-                {rule: 'customRegexp', value: /^[a-zA-Z][0-9]+$/ }
+                { rule: 'required', errorMessage: 'El DNI es obligatorio' },
+                { rule: 'minLength', value: 9, errorMessage: 'El DNI debe tener 8 dígitos y 1 letra.' },
+                { rule: 'maxLength', value: 9, errorMessage: 'El DNI debe tener 8 dígitos y 1 letra.' },
+                { rule: 'customRegexp', value: /^[0-9]{8}[a-zA-Z]$/, errorMessage: 'El DNI debe tener 8 dígitos seguidos de 1 letra.' }
             ])
+            .addField('#zonas', [
+                { rule: 'required', errorMessage: 'Seleccionar la zona es obligatorio' }
+            ])
+            .addField('#precioMin', [ 
+                { rule: 'required', errorMessage: 'El precio mínimo es obligatorio' },
+                { rule: 'number', errorMessage: 'Debe ser un valor numérico' },
+                { rule: 'minNumber', value: 0, errorMessage: 'El precio no puede ser negativo' },
+                {
+                    validator: (value, fields) => {
+                        const precioMax = fields['#precioMax']?.elem?.value;  // ← Cambiado a #precioMax
+                        if (precioMax && parseFloat(value) > parseFloat(precioMax)) {
+                            return false;
+                        }
+                        return true;
+                    },
+                    errorMessage: 'El precio mínimo no puede ser superior al precio máximo'
+                }
+            ])
+            .addField('#precioMax', [ 
+                { rule: 'required', errorMessage: 'El precio máximo es obligatorio' },
+                { rule: 'number', errorMessage: 'Debe ser un valor numérico' },
+                { rule: 'minNumber', value: 0, errorMessage: 'El precio no puede ser negativo' },
+                {
+                    validator: (value, fields) => {
+                        const precioMin = fields['#precioMin']?.elem?.value;  // ← Cambiado a #precioMin
+                        if (precioMin && parseFloat(value) < parseFloat(precioMin)) {
+                            return false;
+                        }
+                        return true;
+                    },
+                    errorMessage: 'El precio máximo no puede ser inferior al precio mínimo'
+                }
+            ])
+            .onSuccess((event) => {
+                console.log('Formulario válido');
+                buscarInmuebles(event);
+            });
     }
     return { init };
 })();

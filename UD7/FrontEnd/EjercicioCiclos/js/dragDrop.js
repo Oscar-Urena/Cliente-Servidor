@@ -26,17 +26,9 @@ export const DragDrop = (() => {
     }
 
     const drop = (e) => {
-<<<<<<< HEAD
         const id = e.dataTransfer.getData("text/plain");
         e.target.classList.remove("drag-over");
         e.target.textContent = id;
-=======
-        console.log("Hola");
-        const id = e.dataTransfer.getData("text/plain");
-        const cuerpo = e.target.parentElement.parentElement.nextElementSibling;
-        const celda = e.
-        console.log(cuerpo);
->>>>>>> 45c54d1 (Pre volcado)
     }
 
     return { 
