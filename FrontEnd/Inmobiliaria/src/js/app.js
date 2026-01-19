@@ -1,5 +1,6 @@
 "use strict";
 
+import Validator from "./JustValidator.js";
 
 const InmobiliariaAPI = (() => {
 
@@ -129,6 +130,23 @@ const InmobiliariaAPI = (() => {
         } catch (error) {
             console.log(error);
         }
+    }
+
+    const Validator = () => {
+        const validar = new JustValidate("#buscarForm", {
+            errorFieldCssClass: 'is-invalid', //es la clase que se añade al campo que tiene error
+            errorLabelCssClass: 'invalid-feedback', //Es la clase que se asigna al mensaje de error que aparece debajo del input
+            focusInvalidField: true, //si un campo no pasa la validación, esta opción hace que el cursor se coloque en el primer campo inválido
+            validateBeforeSubmitting: true //hace que la validación ocurra antes de enviar el formulario
+        });
+
+        validar
+            .addField('#dni', [
+                {rule: 'required'},
+                {rule: 'minLength', value: 9},
+                {rule: 'maxLength', value: 9},
+                {rule: 'customRegexp', value: /^[a-zA-Z][0-9]+$/ }
+            ])
     }
     return { init };
 })();
