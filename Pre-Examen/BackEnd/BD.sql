@@ -1,0 +1,66 @@
+-- Crear base de datos
+CREATE DATABASE IF NOT EXISTS `usuarios` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `usuarios`;
+
+-- Crear tabla (si no existe)
+CREATE TABLE IF NOT EXISTS `users` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(150) NOT NULL UNIQUE,
+    `password` VARCHAR(255) NOT NULL,
+    `role` ENUM('Admin','Usuario','Editor','Visor') NOT NULL,
+    `active` TINYINT(1) NOT NULL DEFAULT 1
+);
+
+-- Contraseña para todos: "password123" (hasheada con bcrypt)
+INSERT INTO `users` (`name`, `email`, `password`, `role`, `active`) VALUES
+('Juan Pérez García', 'juan.perez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Admin', 1),
+('María González López', 'maria.gonzalez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Usuario', 0),
+('Carlos Rodríguez Sánchez', 'carlos.rodriguez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Editor', 1),
+('Ana Martínez Fernández', 'ana.martinez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Visor', 1),
+('Luis García Ruiz', 'luis.garcia@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Usuario', 0),
+('Elena López Moreno', 'elena.lopez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Admin', 1),
+('David Hernández Castro', 'david.hernandez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Editor', 1),
+('Laura Sánchez Romero', 'laura.sanchez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Visor', 0),
+('Miguel Díaz Navarro', 'miguel.diaz@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Usuario', 1),
+('Carmen Muñoz Torres', 'carmen.munoz@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Admin', 1),
+('Francisco Jiménez Gil', 'francisco.jimenez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Editor', 0),
+('Isabel Moreno Vega', 'isabel.moreno@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Visor', 1),
+('Antonio Álvarez Serrano', 'antonio.alvarez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Usuario', 1),
+('Rosa Romero Molina', 'rosa.romero@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Admin', 0),
+('José Castro Ortiz', 'jose.castro@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Editor', 1),
+('Pilar Suárez Delgado', 'pilar.suarez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Visor', 1),
+('Manuel Vargas Iglesias', 'manuel.vargas@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Usuario', 0),
+('Teresa Ramos Cruz', 'teresa.ramos@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Admin', 1),
+('Pedro Herrera Méndez', 'pedro.herrera@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Editor', 1),
+('Dolores Cano Fuentes', 'dolores.cano@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Visor', 0),
+('Javier Prieto Cortés', 'javier.prieto@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Usuario', 1),
+('Concepción Vidal Campos', 'concepcion.vidal@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Admin', 1),
+('Ramón Aguilar Peña', 'ramon.aguilar@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Editor', 0),
+('Josefa Méndez Cabrera', 'josefa.mendez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Visor', 1),
+('Ángel Navarro Garrido', 'angel.navarro@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Usuario', 1),
+('Mercedes Flores León', 'mercedes.flores@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Admin', 0),
+('Tomás Reyes Márquez', 'tomas.reyes@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Editor', 1),
+('Amparo Lozano Santos', 'amparo.lozano@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Visor', 1),
+('Enrique Pastor Sanz', 'enrique.pastor@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Usuario', 0),
+('Cristina Velasco Nieto', 'cristina.velasco@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Admin', 1),
+('Rafael Iglesias Moya', 'rafael.iglesias@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Editor', 1),
+('Montserrat Guerrero Pascual', 'montserrat.guerrero@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Visor', 0),
+('Alberto Rubio Calvo', 'alberto.rubio@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Usuario', 1),
+('Francisca Santana Carrasco', 'francisca.santana@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Admin', 1),
+('Fernando Domínguez Blanco', 'fernando.dominguez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Editor', 0),
+('Dolores Vázquez Soler', 'dolores.vazquez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Visor', 1),
+('Sergio Parra Esteban', 'sergio.parra@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Usuario', 1),
+('Rocío Bravo Medina', 'rocio.bravo@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Admin', 0),
+('Andrés Ibáñez Mora', 'andres.ibanez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Editor', 1),
+('Inmaculada Gallego Ferrer', 'inmaculada.gallego@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Visor', 1),
+('Rubén Caballero Duran', 'ruben.caballero@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Usuario', 0),
+('Raquel León Carmona', 'raquel.leon@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Admin', 1),
+('Marcos Santiago Marín', 'marcos.santiago@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Editor', 1),
+('Beatriz Benítez Lorenzo', 'beatriz.benitez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Visor', 0),
+('Guillermo Méndez Vargas', 'guillermo.mendez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Usuario', 1),
+('Silvia Ramírez Arias', 'silvia.ramirez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Admin', 1),
+('Adrián Mora Hidalgo', 'adrian.mora@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Editor', 0),
+('Irene Cortés Montero', 'irene.cortes@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Visor', 1),
+('Pablo Romero Giménez', 'pablo.romero@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Usuario', 1),
+('Nuria Fernández Castillo', 'nuria.fernandez@example.com', '$2b$10$rZ5c3qP1pKxJ8vN2mL4zPeYwHx9KjRtQsV6uA2bC3dE4fG5hI6jK7', 'Admin', 0);
