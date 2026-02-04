@@ -1,0 +1,20 @@
+<div class="container mt-4">
+    <h1>Data Binding en Angular</h1>
+    <hr />
+
+    <!-- TWO-WAY BINDING -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5>Escribe un color:</h5>
+            <input [style.color]="miColor" type="text" class="form-control mb-3" [(ngModel)]='miColor' placeholder="Color aquí" />
+
+            <div class="alert alert-primary">
+                <h4>¡Color {{miColor}}!</h4>
+                <p  [ngStyle]="{color:miColor}" class="mb-0">Has elegido el color {{miColor}}</p>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col">
+        <h1>$if</h1>
+        <hr>
+        @if(mostrar){
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        }
+        @if(mostrar){
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Lenguaje {{mensajeAngular.lenguaje}}</h5>
+                <p class="card-text">{{mensajeAngular.descripcion}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        }
+        @else{
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Lenguaje {{mensajeJavascript.lenguaje}}</h5>
+                <p class="card-text">{{mensajeJavascript.descripcion}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        }
+        <div class="d-grid gap-2">
+            <button type="button" class="btn btn-primary" (click)="ejecutar()">Mostrar/Ocultar</button>
+        </div>
+
+    </div>
+    <div class="col">
+        <h1>$for</h1>
+        <hr>
+        <ul class="list-group">
+            @for(item of aLenguajes; track $index; let count=$count){
+               <li class="list-group">{{$index+1}}/{{count}}-{{item}}</li>
+            }
+            @empty{
+                <li class="list-group"> No hay lenguajes</li>
+            }
+        </ul>
+    </div>
+</div>

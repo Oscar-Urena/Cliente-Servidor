@@ -155,7 +155,7 @@ const InmobiliariaAPI = (() => {
                 { rule: 'minNumber', value: 0, errorMessage: 'El precio no puede ser negativo' },
                 {
                     validator: (value, fields) => {
-                        const precioMax = fields['#precioMax']?.elem?.value;  // ← Cambiado a #precioMax
+                        const precioMax = fields['#precioMax']?.elem?.value;
                         if (precioMax && parseFloat(value) > parseFloat(precioMax)) {
                             return false;
                         }
@@ -170,7 +170,7 @@ const InmobiliariaAPI = (() => {
                 { rule: 'minNumber', value: 0, errorMessage: 'El precio no puede ser negativo' },
                 {
                     validator: (value, fields) => {
-                        const precioMin = fields['#precioMin']?.elem?.value;  // ← Cambiado a #precioMin
+                        const precioMin = fields['#precioMin']?.elem?.value; 
                         if (precioMin && parseFloat(value) < parseFloat(precioMin)) {
                             return false;
                         }
@@ -184,7 +184,12 @@ const InmobiliariaAPI = (() => {
                 buscarInmuebles(event);
             });
     }
+
+    const 
+    
     return { init };
 })();
 
 InmobiliariaAPI.init();
+
+

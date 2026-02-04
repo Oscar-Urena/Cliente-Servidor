@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col">
+      <h1>ngClass</h1>
+      <hr />
+      <div class="container mt-4">
+  <h1>ngClass - Clases Dinámicas</h1>
+  <hr />
+
+  <!-- EJEMPLO 1: Cambiar alertas -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5>Alertas con ngClass</h5>
+      
+      <div [ngClass]="claseAlerta"  role="alert">
+        <strong>{{mensajeAlerta}}</strong>
+      </div>
+
+      <div class="mt-3">
+        <button class="btn btn-success me-2" (click)="cambiarClase('success', $event)">
+          Éxito
+        </button>
+        <button class="btn btn-warning me-2" (click)="cambiarClase('warning', $event)">
+          Advertencia
+        </button>
+        <button class="btn btn-danger me-2" (click)="cambiarClase('danger', $event)">
+          Error
+        </button>
+        <button class="btn btn-info" (click)="cambiarClase('info', $event)">
+          Info
+        </button>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+</div>

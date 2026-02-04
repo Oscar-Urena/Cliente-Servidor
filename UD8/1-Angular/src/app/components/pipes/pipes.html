@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col">
+      <h1>Pipes</h1>
+      <hr>
+    </div>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Transformación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>1</th>
+        <td>{{nombre}}</td>
+        <td>lowercase</td>
+        <td>{{nombre | lowercase}}</td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td>{{nombre}}</td>
+        <td>upercase</td>
+        <td>{{nombre | uppercase}}</td>
+      </tr>
+      <tr>
+        <th>3</th>
+        <td>{{nombre}}</td>
+        <td>upercase</td>
+        <td>{{nombre | titlecase}}</td>
+      </tr>
+      <tr>
+        <th>4</th>
+        <td>{{nombre}}</td>
+        <td>slice:1:3</td>
+        <td>{{nombre | uppercase | slice:1:3}}</td>
+      </tr>
+      <tr>
+        <th>5</th>
+        <td>{{nombre}}</td>
+        <td>slice:3</td>
+        <td>{{nombre | uppercase | slice:3}}</td>
+      </tr>
+      <tr>
+        <th>6</th>
+        <td>{{numero}}</td>
+        <td>number</td>
+        <td>{{numero | number}}</td>
+      </tr>
+      <tr>
+        <th>7</th>
+        <td>{{numero}}</td>
+        <td>number</td>
+        <td>{{numero | number:'9.1-1'}}</td>
+      </tr>
+      <tr>
+        <th>8</th>
+        <td>{{numero}}</td>
+        <td>currency</td>
+        <td>{{numero | currency}}</td>
+      </tr>
+      <tr>
+        <th>9</th>
+        <td>{{numero}}</td>
+        <td>currency</td>
+        <td>{{numero | currency:'EUR':true:'.1-1'}}</td>
+      </tr>
+      <tr>
+        <th>10</th>
+        <td>{{fecha}}</td>
+        <td>date</td>
+        <td>{{fecha | date}}</td>
+      </tr>
+      <tr>
+        <th>11</th>
+        <td>{{fecha}}</td>
+        <td>date</td>
+        <td>{{fecha | date:'shortDate'}}</td>
+      </tr>
+      <tr>
+        <th>12</th>
+        <td>{{fecha}}</td>
+        <td>date</td>
+        <td>{{fecha | date:'dd/MM/yyyy'}}</td>
+      </tr>
+      <tr>
+        <th>13</th>
+        <td>{{fecha}}</td>
+        <td>date</td>
+        <td>{{fecha | date:'hh:mm:ss'}}</td>
+      </tr>
+      <tr>
+        <th>14</th>
+        <td>{{porcentaje}}</td>
+        <td>percent</td>
+        <td>{{porcentaje | percent}}</td>
+      </tr>
+      <tr>
+        <th>15</th>
+        <td>{{nombre}}</td>
+        <td>pipepassword</td>
+        <td>{{nombre | pipespassword}}</td>
+      </tr>
+      <tr>
+        <th>16</th>
+        <td>{{lista}}</td>
+        <td>pipepassword</td>
+        <td>{{lista | arrayNumeros:2:22}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+  
+  
+  </div>

@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h1>Signals en Angular 21</h1>
+  <hr />
+
+  <!-- SIGNALS BÁSICOS -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5>Contador con Signal</h5>
+      <h2>{{contador()}}</h2>
+      <button class="btn btn-success me-2" (click)="aumentar()">
+        +1
+      </button>
+      <button class="btn btn-danger me-2" (click)="disminuir()">
+        -1
+      </button>
+      <button class="btn btn-secondary" (click)="resetear()">
+        Reset
+      </button>
+    </div>
+  </div>
+
+  <!-- COMPUTED SIGNALS -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5>Señales Computadas</h5>
+      <p>Contador: {{contador()}}</p>
+      <p>El doble: {{doble()}}</p>
+      <p>El triple: {{triple()}}</p>
+      <p>Es par: {{par()}}</p>
+    </div>
+  </div>  
+</div>

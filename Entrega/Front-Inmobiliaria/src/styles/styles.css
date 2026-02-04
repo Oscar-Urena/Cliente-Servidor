@@ -1,0 +1,106 @@
+body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #4e73df, #1cc88a);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-weight: 700;
+      margin-bottom: 35px;
+      font-size: 2.5rem;
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: #495057;
+      margin-bottom: 8px;
+    }
+
+    .form-control, .form-select {
+      border-radius: 10px;
+      border: 1px solid #dee2e6;
+      padding: 12px 15px;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus, .form-select:focus {
+      border-color: #4e73df;
+      box-shadow: 0 0 0 0.25rem rgba(78, 115, 223, 0.15);
+    }
+
+    .btn-search {
+      background: linear-gradient(135deg, #4e73df, #224abe);
+      border: none;
+      padding: 14px 50px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(78, 115, 223, 0.3);
+    }
+
+    .btn-search:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(78, 115, 223, 0.4);
+    }
+
+    .btn-reservar {
+      background: linear-gradient(135deg, #1cc88a, #17a673);
+      border: none;
+      padding: 12px 40px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(28, 200, 138, 0.3);
+    }
+
+    .btn-reservar:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(28, 200, 138, 0.4);
+    }
+
+    .filters-card {
+      background: #f8f9fc;
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      border: 1px solid #e3e6f0;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #5a5c69;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #4e73df;
+    }
+
+    #tabla-inmuebles {
+      margin-top: 30px;
+    }
+    .ocultar{
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 25px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }

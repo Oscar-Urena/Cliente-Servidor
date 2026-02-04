@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col">
+        <h1>Componente padre -🎵 Reproductor de Música-</h1>
+        <hr />
+        <div class="reproductor">
+
+            <h2>Volumen Principal: {{volumen()}}</h2>
+
+            <div class="barra-volumen">
+                <div class="nivel" [ngStyle]="{width:volumen()+'%'}"></div>
+            </div>
+
+            <hr>
+            <h3>Controles:</h3>
+
+            <app-hijo [volumen]="volumen()" [nombre]="'Control1'"  (volumenCambiado)="actualizarVolumen($event)"></app-hijo> 
+
+
+        </div>
+    </div>

@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="container mt-4">
+        <h1>ngStyle</h1>
+        <hr />
+
+        <!-- Tamaño de fuente dinámico -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5>Control de Tamaño</h5>
+                <p [style.font-size.px]="fontSize">
+                    Texto con tamaño p{{fontSize}}x
+                </p>
+
+                <button class="btn btn-success me-2" (click)="aumentarFont()" [disabled]="fontSize>=32">
+                    <i class="fa fa-plus">+</i>
+                </button>
+                <button class="btn btn-danger" (click)="fontSize-=2" [disabled]="fontSize<=8">
+                    <i class="fa fa-minus">-</i>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- EJEMPLO 2: Cambiar estilos con botones -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5>Selecciona un Tema</h5>
+
+                <button class="btn btn-primary me-2" >
+                    Tema Azul
+                </button>
+                <button class="btn btn-success me-2" (click)="cambiarEstiloVerde()">
+                    Tema Verde
+                </button>
+                <button class="btn btn-danger" (click)="cambiarEstiloRojo()">
+                    Tema Rojo
+                </button>
+
+                <div [ngStyle]="estilosTemaActual" class="p-4 text-center mt-3">
+                    <h3>{{nombreTema}}</h3>
+                    <p>Este es el tema actual</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</div>

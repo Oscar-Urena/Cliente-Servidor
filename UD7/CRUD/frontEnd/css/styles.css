@@ -1,0 +1,216 @@
+/* ===== SIN SCROLL GLOBAL ===== */
+html, body{
+  height: 100vh;
+  overflow: hidden;
+  background: #f4f6fb;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+.app-layout{
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 64px 1fr;
+  height: 100vh;
+  grid-template-areas:
+    "sidebar topbar"
+    "sidebar main";
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  grid-area: sidebar;
+  background: #6C3EF8;
+  color: white;
+  padding: 16px 14px;
+}
+
+.sidebar-header{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sidebar-menu a{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  opacity: .9;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active{
+  background: rgba(255,255,255,.2);
+  opacity: 1;
+}
+
+.toolbar {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* ===== TOPBAR ===== */
+.topbar{
+  grid-area: topbar;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* ===== ÁREA PRINCIPAL ===== */
+.main{
+  grid-area: main;
+  padding: 18px;
+  overflow-y: auto;
+}
+
+/* ===== BADGES CUSTOM ===== */
+.bg-success-soft{
+  background: #dcfce7;
+}
+
+.bg-danger-soft{
+  background: #fee2e2;
+}
+
+.badge{
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-weight: 600;
+}
+#data-table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+button.clear {
+    background: #ef4444;
+}
+
+button.clear:hover {
+    background: #dc2626;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.btn-edit {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #45a049;
+}
+
+.btn-delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #da190b;
+}
+
+.status-active {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.role-badge {
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.role-admin {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.role-usuario {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+.role-editor {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.role-visor {
+    background: #e5e7eb;
+    color: #374151;
+}
