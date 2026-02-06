@@ -13,5 +13,34 @@ export const routes: Routes = [
         path: 'doblebinding',
         loadComponent: () => import('./components/doblebinding/doblebinding').then(m => m.Doblebinding)
     },
+    {
+        path: 'iforcom',
+        loadComponent: () => import('./components/iforcom/iforcom').then(m => m.Iforcom)
+    },
+    {
+        path: 'ng-class-c',
+        loadComponent: () => import('./components/ng-class-c/ng-class-c').then(m => m.NgClassC)
+    },
+    {
+        path: 'ng-style-c',
+        loadComponent: () => import('./components/ng-style-c/ng-style-c').then(m => m.NStyleC)
+    },
+    {
+        path: 'padre',
+        loadComponent: () => import('./components/padre/padre').then(m => m.Padre)
+    },
+    {
+        path: 'signal-c',
+        loadComponent: () => import('./components/signal-c/signal-c').then(m => m.SignalC)
+    },
+    {
+        path: 'switchcom',
+        loadComponent: () => import('./components/switchcom/switchcom').then(m => m.Switchcom)
+    },
+    
+    
+    
+    
+    
     
 ];
