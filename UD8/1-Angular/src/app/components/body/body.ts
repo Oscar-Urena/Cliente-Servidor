@@ -10,7 +10,7 @@ import { Personal } from '../../interfaces/personal';
 export class Body {
   public title:string="Angular";
   public datosPersona:Personal={
-    nombre: "Cristina",
-    apellidos: "Simón Hernández"
+    nombre: "Óscar",
+    apellidos: "Ureña Salvador"
   };
 }
