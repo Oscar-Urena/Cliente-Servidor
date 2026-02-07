@@ -37,10 +37,12 @@ export const routes: Routes = [
         path: 'switchcom',
         loadComponent: () => import('./components/switchcom/switchcom').then(m => m.Switchcom)
     },
-    
-    
-    
-    
-    
-    
+    {
+        path: 'EjemploComponente',
+        loadComponent: () => import('./components/ejemplo-componente/ejemplo-componente').then(m => m.EjemploComponente)
+    },
+    {
+        path: 'listaEstudiantes',
+        loadComponent: () => import('./components/ejercicioEstudiantes/componentes/listaEstudiantes/listaEstudiantes').then(m => m.listaEstudiantes)
+    }
 ];

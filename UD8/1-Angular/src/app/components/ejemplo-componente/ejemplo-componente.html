@@ -1,22 +1,28 @@
 <div class="row">
-    <div class="col">
-      <h1>Pipes</h1>
-      <hr>
-    </div>
-  
+  <div class="col">
+    <h1>Pipes</h1>
+    <hr>
+  </div>
+
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">variable</th>
-        <th scope="col">Pipe</th>
-        <th scope="col">Transformación</th>
+        <th scope="col">Id</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Categoría</th>
+        <th scope="col">Stock</th>
       </tr>
     </thead>
     <tbody>
-      
+      <tr *ngFor="let stock of aProducts">
+        <td>{{stock.id}}</td>
+        <td>{{stock.descripcion}}</td>
+        <td>{{stock.precio}}</td>
+        <td>{{stock.categoria}}</td>
+        <td>{{stock.stock}}</td>
+      </tr>
     </tbody>
   </table>
-  
-  
-  </div>
+
+</div>
