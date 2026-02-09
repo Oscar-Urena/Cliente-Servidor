@@ -22,19 +22,32 @@ export class listaEstudiantes {
     { id: 7, nombre: "Paco Fiestas", edad: 26, promedio: 4.5 }
   ];
 
-  public contadorActual ={
+  public contadorActual = {
     "background-color": "green",
   }
-  
 
-  cambiarFondoNaranja():void{
+
+  cambiarFondoNaranja(): void {
     this.contadorActual = {
       "background-color": "orange"
     }
   }
-  cambiarFondoVerde():void{
+  cambiarFondoVerde(): void {
     this.contadorActual = {
       "background-color": "green"
+    }
+  }
+
+
+  eliminar(estudiante: Estudiante): void {
+    console.log("Hola");
+    const index = this.estudiantes.findIndex(e => e.id === estudiante.id);
+
+    if (index !== -1) {
+      this.estudiantes.splice(index, 1); 
+      console.log('Estudiante eliminado');
+    } else {
+      console.log('Estudiante no encontrado');
     }
   }
 }

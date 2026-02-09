@@ -24,8 +24,12 @@ export class tarjetaEstudiante {
       "font-weight": "bold",
     };
   }
+
+
+  public estudianteEliminar = output<Estudiante>();
   
   eliminar():void{
+    this.estudianteEliminar.emit(this.estudiante());
   }
   
 }

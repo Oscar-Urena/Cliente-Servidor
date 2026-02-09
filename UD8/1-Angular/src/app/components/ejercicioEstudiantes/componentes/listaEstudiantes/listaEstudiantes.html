@@ -4,7 +4,8 @@
     <hr />
     <div class="contenedor">
         @for(item of estudiantes; track $index; let count=$count){
-            <app-tarjetaEstudiante [estudiante]="item"></app-tarjetaEstudiante>
+        <app-tarjetaEstudiante [estudiante]="item" (estudianteEliminar)="eliminar($event)">
+        </app-tarjetaEstudiante>
         }
     </div>
 </div>
