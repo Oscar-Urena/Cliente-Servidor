@@ -44,5 +44,21 @@ export const routes: Routes = [
     {
         path: 'listaEstudiantes',
         loadComponent: () => import('./components/ejercicioEstudiantes/componentes/listaEstudiantes/listaEstudiantes').then(m => m.listaEstudiantes)
+    },
+    {
+        path: 'servicios',
+        loadComponent: () => import('./components/servicios/servicios').then(m => m.Servicios)
+    },
+    {
+        path: 'login',
+        loadComponent: () => import('./components/usuarios/login/login').then(m => m.Login)
+    },
+    {
+        path: 'formulario',
+        loadComponent: () => import('./components/usuarios/formulario/formulario').then(m => m.Formulario)
+    },
+    {
+        path: 'CRUD',
+        loadComponent: () => import('./components/usuarios/crud/crud').then(m => m.Crud)
     }
 ];

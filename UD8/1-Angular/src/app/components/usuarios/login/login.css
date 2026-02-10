@@ -1,0 +1,44 @@
+.login-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+mat-card-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+mat-card-subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.login-btn {
+  height: 45px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+mat-icon {
+  color: #6b7280;
+}
+
+mat-form-field.mat-focused mat-icon {
+  color: #3f51b5; /* primary */
+}

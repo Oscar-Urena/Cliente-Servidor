@@ -1,11 +1,13 @@
 <div class="container mt-4">
     <h1>Lista de Estudiantes</h1>
-    <p class="contador" [ngStyle]="contadorActual">Total de estudiantes: {{estudiantes.length}} </p>
+    <p class="contador" [ngStyle]="{'background-color': estudiantes.length > 4 ? 'green' : 'orange' }">Total de estudiantes: {{estudiantes.length}} </p>
     <hr />
     <div class="contenedor">
         @for(item of estudiantes; track $index; let count=$count){
         <app-tarjetaEstudiante [estudiante]="item" (estudianteEliminar)="eliminar($event)">
         </app-tarjetaEstudiante>
+        }@empty{
+            <p>No hay estudiantes</p>
         }
     </div>
 </div>

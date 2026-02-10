@@ -3,17 +3,18 @@
         <h3>{{estudiante().nombre}}</h3>
         <p>Edad: {{estudiante().edad}}</p>
         <p class="promedio">Promedio: {{estudiante().promedio | nota}}</p>
-        @if(estudiante().promedio >= 9){
-
+        @if(estudiante().promedio >= 9)
+        {
         <div class="excelente">Excelente</div>
         }
-        @if(estudiante().promedio < 9 && estudiante().promedio>= 5){
-
+        @if(estudiante().promedio < 9 && estudiante().promedio>= 5)
+        {
             <div class="bien">Buen trabajo</div>
-            }
-            @if(estudiante().promedio < 5){ <div class="alerta">Necesita Mejorar
+        }
+        @if(estudiante().promedio < 5)
+        { 
+            <div class="alerta">Necesita Mejorar</div>
+        }
+        <button [ngStyle]="obtenerEstiloBoton()" (click)="eliminar()">Eliminar</button>
     </div>
-    }
-    <button [ngStyle]="obtenerEstiloBoton()" (click)="eliminar()">Eliminar</button>
-</div>
 </div>
