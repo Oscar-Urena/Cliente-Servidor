@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10rem;
  
 }
 
@@ -17,11 +18,13 @@
 mat-card-title {
   font-size: 1.6rem;
   font-weight: 600;
+  padding: 1.5rem;
 }
 
 mat-card-subtitle {
   font-size: 0.9rem;
   color: #6b7280;
+
 }
 
 .full-width {

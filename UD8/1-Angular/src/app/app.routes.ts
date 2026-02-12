@@ -58,7 +58,11 @@ export const routes: Routes = [
         loadComponent: () => import('./components/usuarios/formulario/formulario').then(m => m.Formulario)
     },
     {
-        path: 'CRUD',
+        path: 'crud',
         loadComponent: () => import('./components/usuarios/crud/crud').then(m => m.Crud)
+    },
+    {
+        path: 'crudCurso',
+        loadComponent: () => import('./components/cursos/crud/crud').then(m => m.Crud)
     }
 ];

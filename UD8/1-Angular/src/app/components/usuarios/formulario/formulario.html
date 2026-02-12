@@ -1,3 +1,131 @@
-<p>formulario works!</p>
+<div class="form-wrapper">
 
  
+    <div class="header-icon">
+      <mat-icon>person_add</mat-icon>
+    </div>
+    <div class="header-text">
+      <h1>Usuario</h1>
+      <p>Completa los datos para gestionar un usuario en el sistema</p>
+    </div>
+  
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="user-form">
+
+    <!-- ID -->
+    <mat-form-field appearance="outline" class="field-full">
+      <mat-label>ID</mat-label>
+      <span matTextPrefix><mat-icon class="prefix-icon">tag</mat-icon></span>
+      <input matInput formControlName="id" readonly />
+
+    </mat-form-field>
+
+    <!-- NAME -->
+    <mat-form-field appearance="outline" class="field-full">
+      <mat-label>Nombre completo</mat-label>
+      <span matTextPrefix><mat-icon class="prefix-icon">person</mat-icon></span>
+      <input matInput formControlName="name" placeholder="Ej: Juan Pérez" />
+      @if (nombre.errors?.['required'] && nombre.touched) {
+      <mat-error>El nombre es requerido</mat-error>
+      }
+      @if (nombre.errors?.['minlength']) {
+      <mat-error>Mínimo 3 caracteres </mat-error>
+      }
+      @if (nombre.errors?.['maxlength']) {
+      <mat-error>Máximo 50 caracteres</mat-error>
+      }
+
+    </mat-form-field>
+
+    <!-- EMAIL -->
+    <mat-form-field appearance="outline" class="field-full">
+      <mat-label>Correo electrónico</mat-label>
+      <span matTextPrefix><mat-icon class="prefix-icon">mail</mat-icon></span>
+      <input matInput formControlName="email" placeholder="Ej: juan@empresa.com" type="email" />
+      @if (email.errors?.['required'] && email.touched) {
+      <mat-error>El email es requerido</mat-error>
+      }
+      @if (email.errors?.['email']) {
+      <mat-error>Ingrese un email válido</mat-error>
+      }
+    </mat-form-field>
+
+    <!-- PASSWORD -->
+    <mat-form-field appearance="outline" class="field-full">
+      <mat-label>Contraseña</mat-label>
+      <span matTextPrefix><mat-icon class="prefix-icon">lock</mat-icon></span>
+      <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'" />
+      <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
+        <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+      <mat-hint>Mínimo 8 caracteres</mat-hint>
+
+      @if (password.errors?.['required'] && password.touched) {
+      <mat-error>La contraseña es requerida</mat-error>
+      }
+      @if (password.errors?.['minlength']) {
+      <mat-error>Mínimo 8 caracteres</mat-error>
+      }
+      @if (password.errors?.['maxlength']) {
+      <mat-error>Máximo 100 caracteres</mat-error>
+      }
+    </mat-form-field>
+
+    <!-- ROLE + ACTIVE en la misma fila -->
+    <div class="field-row">
+
+      <!-- ROLE -->
+      <mat-form-field appearance="outline" class="field-half">
+        <mat-label>Rol</mat-label>
+        <span matTextPrefix><mat-icon class="prefix-icon">shield</mat-icon></span>
+        <mat-select formControlName="role">
+          @for (rol of roles; track rol) {
+          <mat-option [value]="rol">
+            <div class="option-row">
+              <mat-icon class="option-icon">{{ rol }}</mat-icon>
+              {{ rol }}
+            </div>
+          </mat-option>
+          }
+        </mat-select>
+        @if (role.errors?.['required'] && role.touched) {
+        <mat-error>Seleccione un rol</mat-error>
+        }
+      </mat-form-field>
+
+      <!-- ACTIVE -->
+      <mat-form-field appearance="outline" class="field-half">
+        <mat-label>Estado</mat-label>
+        <span matTextPrefix><mat-icon class="prefix-icon">toggle_on</mat-icon></span>
+        <mat-select formControlName="active">
+          <mat-option [value]="true">
+            <div class="option-row">
+              <span class="status-dot active"></span> Activo
+            </div>
+          </mat-option>
+          <mat-option [value]="false">
+            <div class="option-row">
+              <span class="status-dot inactive"></span> Inactivo
+            </div>
+          </mat-option>
+        </mat-select>
+        @if (userForm.get('active')?.hasError('required') && userForm.get('active')?.touched) {
+        <mat-error>Seleccione un estado</mat-error>
+        }
+      </mat-form-field>
+
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="form-actions">
+      <button mat-stroked-button type="button" (click)="onReset()" class="btn-cancel">
+        Limpiar
+      </button>
+      <button mat-flat-button type="submit" [disabled]="userForm.invalid" class="btn-submit">
+        Guardar Usuario
+      </button>
+    </div>
+
+  </form>
+
+</div>
