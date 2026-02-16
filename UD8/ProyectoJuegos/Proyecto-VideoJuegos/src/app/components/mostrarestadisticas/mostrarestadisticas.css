@@ -1,0 +1,44 @@
+.contenido {
+  width: 90%;
+  margin: auto;
+  color: #ff4757;
+}
+
+h3 {
+  font-weight: 700;
+  font-size:1.5rem;
+  padding-block: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+
+  div {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px 24px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+}
+
+#MV {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  color: #ff4757;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+:host {
+  display: block;
+  height: 100%;
+  min-height: 100%;
+}
