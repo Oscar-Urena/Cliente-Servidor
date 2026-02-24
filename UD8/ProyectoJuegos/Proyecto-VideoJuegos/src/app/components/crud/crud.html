@@ -1,1 +1,65 @@
-<p>crud works!</p>
+<div class="table-header">
+    <h2>Cursos</h2>
+    <button>
+        Nuevo Curso
+    </button>
+</div>
+
+<div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+            <td mat-cell *matCellDef="let juego">{{juego.id}}</td>
+        </ng-container>
+        <ng-container matColumnDef="titulo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Curso</th>
+            <td mat-cell *matCellDef="let juego">{{juego.titulo}}</td>
+        </ng-container>
+        <ng-container matColumnDef="genero">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Género</th>
+            <td mat-cell *matCellDef="let juego">{{juego.genero}}</td>
+        </ng-container>
+        <ng-container matColumnDef="plataforma">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Plataforma</th>
+            <td mat-cell *matCellDef="let juego">{{juego.plataforma}}</td>
+        </ng-container>
+        <ng-container matColumnDef="anio">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Año</th>
+            <td mat-cell *matCellDef="let juego">{{juego.anio | anio}}</td>
+        </ng-container>
+        <ng-container matColumnDef="precio">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Precio</th>
+            <td mat-cell *matCellDef="let juego">{{juego.precio | currency:'EUR'}}</td>
+        </ng-container>
+        <ng-container matColumnDef="rating">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Rating</th>
+            <td mat-cell *matCellDef="let juego">{{juego.rating}}</td>
+        </ng-container>
+        <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+            <td mat-cell *matCellDef="let juego">
+                <span [ngClass]="{
+                    'agotado': juego.estado == 'Agotado',
+                    'rebajado' : juego.estado == 'Rebajado',
+                    'disponible' : juego.estado == 'Disponible'
+                }">{{juego.estado}}</span>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef>Acciones</th>
+            <td mat-cell *matCellDef="let juego">
+                <button mat-icon-button color="primary" (click)="editar(juego)" matTooltip="Editar">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="eliminar(juego)" matTooltip="Eliminar">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25]" [pageSize]="20" showFirstLastButtons></mat-paginator>
+</div>

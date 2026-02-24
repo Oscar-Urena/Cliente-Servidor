@@ -7,6 +7,19 @@ export const routes: Routes = [
     },
     {
         path: "juegos",
-        loadComponent: () => import('./components/juegos/juegos').then(m => m.Juegos)
+        loadComponent: () => import('./components/crud/crud').then(m => m.Crud)
     },
+    {
+        path: "formulario",
+        loadComponent: () => import('./components/formularios/formularios').then(m => m.Formularios)
+    },
+    {
+        path: "formulario/:id",
+        loadComponent: () => import('./components/formularios/formularios').then(m => m.Formularios)
+    },
+    {
+        path: "calificaciones",
+        loadComponent: () => import('./components/comunicacion/padre/padre').then(m => m.Padre)
+    },
+
 ];

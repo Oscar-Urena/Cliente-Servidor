@@ -1,0 +1,16 @@
+<mat-card class="game-card mb-3">
+  <mat-card-header>
+    <mat-card-title class="text-primary">{{juego().titulo}}</mat-card-title>
+    <mat-card-subtitle>{{juego().genero}}</mat-card-subtitle>
+  </mat-card-header>
+  
+  <mat-card-content>
+    <p class="description">{{juego().descripcion}}</p>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-flat-button color="warn" (click)='votar()'>
+      <mat-icon>favorite</mat-icon> Me gusta
+    </button>
+  </mat-card-actions>
+</mat-card>

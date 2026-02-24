@@ -1,0 +1,21 @@
+<div class="container py-4 m-auto">
+  <div class="row mb-4">
+    <div class="col">
+      <h2 class="text-center">Arquitectura Padre-Hijo</h2>
+      <div class="alert alert-info text-center shadow-sm d-flex align-items-center justify-content-center" role="alert">
+        <mat-icon class="me-2">info</mat-icon>
+        @if(juegoVotado == ""){
+          <span>Introduce tu voto</span>
+        }@else{
+          <span>Has votado a {{juegoVotado}}</span>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 ">
+    @for (juego of juegoS(); track juego.id) {
+      <app-hijo [juego]="juego" (votado)="votado($event)"></app-hijo>
+    }
+  </div>
+</div>

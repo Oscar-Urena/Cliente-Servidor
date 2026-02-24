@@ -1,0 +1,183 @@
+/* formulario.component.css */
+
+.form-container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+/* Cabecera del formulario */
+.form-header {
+  text-align: center;
+  margin-block: 30px;
+}
+
+.form-icon {
+  font-size: 2rem;
+  background: linear-gradient(290deg, #cc415e, #341f32);
+  border-radius: 12px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px auto;
+}
+
+.form-header h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.form-header p {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 4px 0 0 0;
+}
+
+/* Filas del formulario */
+.form-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+/* Grupos de campos */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-group.full      { flex: 1; }
+.form-group.half      { flex: 1; }
+.form-group.third     { flex: 1; }
+
+/* Inputs, selects y textarea */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 12px 12px 36px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #333;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #3b5bdb;
+  background: #fff;
+}
+
+.form-group input.ng-invalid.ng-touched,
+.form-group select.ng-invalid.ng-touched,
+.form-group textarea.ng-invalid.ng-touched {
+  border-color: #e03131;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Icono dentro del campo */
+.field-icon {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  font-size: 0.85rem;
+  color: #aaa;
+  pointer-events: none;
+}
+
+/* Label de estado (encima del select) */
+.select-label {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 2px;
+  padding-left: 4px;
+}
+
+/* Hint bajo el campo de rating */
+small {
+  font-size: 0.72rem;
+  color: #aaa;
+  padding-left: 4px;
+  margin-top: 2px;
+}
+
+/* Mensajes de error */
+.error {
+  font-size: 0.75rem;
+  color: #e03131;
+  margin-top: 4px;
+  padding-left: 4px;
+}
+
+/* Botones */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-limpiar {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  color: #555;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-limpiar:hover {
+  background: #f1f1f1;
+}
+
+.btn-guardar {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  background: #3b5bdb;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-guardar:hover:not(:disabled) {
+  background: #2f4ac0;
+}
+
+.btn-guardar:disabled {
+  background: #aab4e8;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-container {
+    padding: 20px;
+    margin: 20px;
+  }
+}

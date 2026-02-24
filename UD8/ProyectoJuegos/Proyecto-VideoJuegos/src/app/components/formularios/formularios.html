@@ -1,1 +1,104 @@
-<p>formularios works!</p>
+<div class="form-header">
+    <div class="form-icon"><i class="fa-solid fa-gamepad text-white"></i></div>
+    <h2>Juego</h2>
+    <p>Completa los datos para gestionar un juego en el catálogo</p>
+  </div>
+<div class="form-container"> 
+  <form [formGroup]="juegoForm" (ngSubmit)="onSubmit()">
+
+    <!-- Fila 1: ID y Título -->
+    <div class="form-row">
+      <div class="form-group half">
+        <span class="field-icon">#</span>
+        <input type="number" formControlName="id" placeholder="ID" readonly />
+      </div>
+      <div class="form-group half">
+        <span class="field-icon">T</span>
+        <input type="text" formControlName="titulo" placeholder="Título*" maxlength="150" />
+      </div>
+    </div>
+
+    <!-- Fila 2: Desarrollador -->
+    <div class="form-row">
+      <div class="form-group full">
+        <span class="field-icon"><i class="fa-solid fa-users"></i></span>
+        <input type="text" formControlName="desarrollador" placeholder="Desarrollador*" maxlength="100" />
+      </div>
+    </div>
+
+    <!-- Fila 3: Descripción -->
+    <div class="form-row">
+      <div class="form-group full">
+        <span class="field-icon"><i class="fa-solid fa-clipboard"></i></span>
+        <textarea formControlName="descripcion" placeholder="Descripción*" rows="4"></textarea>
+      </div>
+    </div>
+
+    <!-- Fila 4: Género, Plataforma, Año -->
+    <div class="form-row">
+      <div class="form-group third">
+        <span class="field-icon"><i class="fa-solid fa-shapes"></i></span>
+        <select formControlName="genero">
+          <option value="" disabled>Género*</option>
+          <option value="RPG">RPG</option>
+          <option value="Acción">Acción</option>
+          <option value="Sandbox">Sandbox</option>
+          <option value="Metroidvania">Metroidvania</option>
+          <option value="Simulación">Simulación</option>
+          <option value="Roguelike">Roguelike</option>
+        </select>
+      </div>
+      <div class="form-group third">
+        <span class="field-icon"><i class="fa-solid fa-display"></i></span>
+        <select formControlName="plataforma">
+          <option value="" disabled>Plataforma*</option>
+          <option value="PC">PC</option>
+          <option value="PS5">PS5</option>
+          <option value="Xbox">Xbox</option>
+          <option value="Multiplataforma">Multiplataforma</option>
+        </select>
+      </div>
+      <div class="form-group third">
+        <span class="field-icon"><i class="fa-solid fa-calendar"></i></span>
+        <input type="number" formControlName="anio" placeholder="Año*" min="1970" [max]="currentYear" />
+      </div>
+    </div>
+
+    <!-- Fila 5: Precio, Rating, Estado -->
+    <div class="form-row">
+      <div class="form-group third">
+        <span class="field-icon">€</span>
+        <input type="number" formControlName="precio" placeholder="Precio (€)*" min="0" max="9999.99" step="0.01" />
+      </div>
+      <div class="form-group third">
+        <span class="field-icon"><i class="fa-solid fa-star"></i></span>
+        <input type="number" formControlName="rating" placeholder="Rating*" min="0" max="10" step="0.1" />
+        <small>Entre 0 y 10</small>
+      </div>
+      <div class="form-group third">
+        <span class="field-icon"><i class="fa-solid fa-toggle-on"></i></span>
+        
+        <select formControlName="estado">
+          <option value="Disponible">Disponible</option>
+          <option value="Rebajado">Rebajado</option>
+          <option value="Agotado">Agotado</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Fila 6: URL de imagen -->
+    <div class="form-row">
+      <div class="form-group full">
+        <span class="field-icon"><i class="fa-solid fa-image"></i></span>
+        <input type="url" formControlName="imagen" placeholder="URL de imagen" />
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="form-actions">
+      <button type="button" class="btn-limpiar" (click)="limpiarFormulario()">Limpiar</button>
+      <button type="submit" class="btn-guardar" [disabled]="juegoForm.invalid">Guardar Juego</button>
+    </div>
+
+  </form>
+</div>

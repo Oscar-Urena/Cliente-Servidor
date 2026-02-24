@@ -1,0 +1,173 @@
+
+.table-container {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+  padding: 5%;
+  box-shadow: 0 2px 4px rgba(182, 161, 161, 0.1);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.table-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.agotado {
+    background-color: #e53935;
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.disponible {
+    background-color: #43a047;
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.rebajado {
+    background-color: #fdd835;
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+/* Reducir columna ID */
+.mat-column-id {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+table {
+  width: 100%;
+  table-layout: auto; /* Distribuye columnas según contenido */
+}
+
+/* Estilos de encabezado */
+th.mat-header-cell {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 16px 12px;
+}
+
+/* Estilos de celdas */
+td.mat-cell {
+  padding: 16px 12px;
+  font-size: 14px;
+}
+
+/* Chips de rol */
+mat-chip {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.role-chip-admin {
+  background-color: #ff5722 !important;
+  color: white !important;
+}
+
+.role-chip-user {
+  background-color: #2196f3 !important;
+  color: white !important;
+}
+
+.role-chip-moderator {
+  background-color: #9c27b0 !important;
+  color: white !important;
+}
+
+/* Chips de estado */
+.status-active {
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+.status-inactive {
+  background-color: #9e9e9e !important;
+  color: white !important;
+}
+
+mat-chip mat-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+/* Botones de acciones */
+td.mat-cell button {
+  margin: 0 2px;
+}
+
+button mat-icon {
+  font-size: 20px;
+}
+
+/* Mensaje sin datos */
+.no-data {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.no-data mat-icon {
+  font-size: 64px;
+  width: 64px;
+  height: 64px;
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+.no-data p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Estilos del paginador */
+mat-paginator {
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Filas al pasar el mouse */
+tr.mat-row:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  table {
+    font-size: 12px;
+  }
+
+  th.mat-header-cell,
+  td.mat-cell {
+    padding: 12px 8px;
+  }
+
+  button mat-icon {
+    font-size: 18px;
+  }
+
+  mat-chip {
+    font-size: 11px;
+  }
+}
